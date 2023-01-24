@@ -1,13 +1,14 @@
 version: 2.1
 
 orbs:
-  unumid: unumid/unumid-app-orb@0.4.0
+  unumid: unumid/unumid-app-orb@0.5.0
 
 workflows:
   lint-and-test:
     jobs:
       - unumid/lint-and-test:
           name: unumid/lint-and-test-branch
+          compile_script_name: build
           filters:
             branches:
               ignore:
@@ -16,6 +17,7 @@ workflows:
   build-and-deploy:
     jobs:
       - unumid/lint-and-test:
+          compile_script_name: build
           filters:
             branches:
               only:
@@ -55,6 +57,7 @@ workflows:
   build-and-deploy-sandbox:
     jobs:
       - unumid/lint-and-test:
+          compile_script_name: build
           filters:
             tags:
               only: /^v.*/
@@ -100,6 +103,7 @@ workflows:
   build-and-deploy-test:
     jobs:
       - unumid/lint-and-test:
+          compile_script_name: build
           filters:
             branches:
               only:
