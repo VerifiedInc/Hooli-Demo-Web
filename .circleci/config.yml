@@ -8,17 +8,17 @@ workflows:
     jobs:
       - unumid/lint-and-test:
           name: unumid/lint-and-test-branch
-          compile_script_name: "build"
+          compile_script_name: 'build'
           filters:
             branches:
               ignore:
                 - main
                 - test-circleci
-                
+
   build-and-deploy:
     jobs:
       - unumid/lint-and-test:
-          compile_script_name: "build"
+          compile_script_name: 'build'
           filters:
             branches:
               only:
@@ -58,7 +58,7 @@ workflows:
   build-and-deploy-sandbox:
     jobs:
       - unumid/lint-and-test:
-          compile_script_name: "build"
+          compile_script_name: 'build'
           filters:
             tags:
               only: /^v.*/
@@ -104,7 +104,7 @@ workflows:
   build-and-deploy-test:
     jobs:
       - unumid/lint-and-test:
-          compile_script_name: "build"
+          compile_script_name: 'build'
           filters:
             branches:
               only:
