@@ -14,7 +14,9 @@ interface NavListProps {
   email: UserDto['email'];
 }
 
-// Content to render within the vertical navigation bar
+/**
+ * Component which contains content to display in the nav bar.
+ */
 export default ({ email }: NavListProps) => {
   return (
     <div>

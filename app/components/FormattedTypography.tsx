@@ -8,7 +8,9 @@ interface ModalTypographyProps {
   children?: React.ReactNode;
 }
 
-// Formated Typography Component, primarily used in the IDDialog
+/**
+ * Wrapper on MUI Typography component with some pre-styled aspects. Primarily leveraged in the IDDialog.
+ */
 export default (props: ModalTypographyProps) => {
   const { variant, color, sx, children } = props;
 

@@ -10,7 +10,9 @@ interface IDDialogProps {
   isSuccess: 'new' | 'success' | 'error';
 }
 
-// Component pops up when user first logs in, prompting them to provide permission to issue a Unum ID card
+/**
+ * Component to pop-up and prompt user on issuing an Unum ID card. Also handles notification of successful or failed issuance.
+ */
 export default ({ isSuccess }: IDDialogProps) => {
   const { primary, neutral } = theme.palette;
   const navigate = useNavigate();

@@ -8,7 +8,10 @@ interface NavBarProps {
   email: UserDto['email'];
 }
 
-// Nav Menu component for demo application. Vertical design and fixed open on left-hand side of screen for desktop. Collapsible for smaller/mobile devices
+/**
+ * Nav menu for application once logged-in. Vertical design and fixed open on left-hand side of screen for desktop.
+ * Collapsible for smaller/mobile devices
+ */
 export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
   const drawerWidth = 250;
 
