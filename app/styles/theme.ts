@@ -29,37 +29,32 @@ declare module '@mui/material/Typography' {
 }
 
 const typography = {
-  fontFamily: 'Lato',
+  fontFamily: 'InterstateCondensed',
   h1: {
-    fontFamily: 'PlayfairDisplay',
     fontSize: '2.125rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.35,
   },
   h2: {
-    fontFamily: 'PlayfairDisplay',
     fontSize: '1.5rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.33,
   },
   h3: {
-    fontFamily: 'PlayfairDisplay',
     fontSize: '1.25rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.35,
   },
   h4: {
-    fontFamily: 'Lato',
     fontSize: '1.25rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.2,
   },
   h5: {
-    fontFamily: 'Lato',
     fontSize: '1rem',
     fontWeight: 700,
     letterSpacing: 0,
@@ -99,33 +94,27 @@ const typography = {
     lineHeight: 1.1875,
   },
   button: {
-    fontFamily: 'Lato',
     // fontSize set by MUI button component sizes, setting it here will screw that up
     fontWeight: 900,
     letterSpacing: 0,
     lineHeight: 1.2,
-    textTransform: 'uppercase' as const,
   },
   caption: {
-    font: 'Lato',
-    fontSize: '0.75rem',
+    fontSize: '0.65rem',
     fontWeight: 400,
     letterSpacing: 0,
     lineHeight: 1.25,
   },
   overline: {
-    font: 'Lato',
     fontSize: '0.75rem',
     fontWeight: 400,
     letterSpacing: 0,
     lineHeight: 1.25,
   },
   label: {
-    fontFamily: 'Lato',
     fontSize: '0.75rem',
     fontWeight: 700,
     letterSpacing: 1,
-    textTransform: 'uppercase' as const,
   },
 };
 
@@ -134,15 +123,15 @@ const typography = {
 export const theme = createTheme({
   palette: {
     primary: {
-      main: colors.green,
-      light: colors.lightGreen,
-      dark: colors.darkGreen,
-      contrastText: colors.white,
-    },
-    secondary: {
       main: colors.blue,
       light: colors.lightBlue,
       dark: colors.darkBlue,
+      contrastText: colors.white,
+    },
+    secondary: {
+      main: colors.green,
+      light: colors.lightGreen,
+      dark: colors.black,
       contrastText: colors.white,
     },
     error: {
@@ -175,6 +164,9 @@ export const theme = createTheme({
       dark: colors.darkGrey,
     },
   },
+  shape: {
+    borderRadius: 8,
+  },
   components: {
     MuiAlertTitle: {
       styleOverrides: {
@@ -189,7 +181,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           marginLeft: '0.15rem',
-          background: `${colors.white} !important`,
           '&:before': {
             content: '""',
             position: 'absolute',
@@ -205,15 +196,6 @@ export const theme = createTheme({
         shrink: {
           ...typography.label,
           fontSize: '1rem',
-        },
-      },
-    },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        notchedOutline: {
-          '& > legend': {
-            ...typography.label,
-          },
         },
       },
     },
@@ -275,6 +257,20 @@ export const theme = createTheme({
         label: {
           ...typography.subtitle2,
         },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: 'filled',
+        fullWidth: true,
+        InputProps: { disableUnderline: true },
       },
     },
   },

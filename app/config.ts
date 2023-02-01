@@ -17,6 +17,8 @@ interface Config {
   dbHost: string;
   dbPort: number;
   sessionSecret: string;
+  unumAPIKey: string;
+  coreServiceUrl: string;
 }
 
 const dbConfig =
@@ -46,5 +48,7 @@ export const config: Config = {
   newRelicLicenseKey: process.env.NEW_RELIC_LICENSE_KEY || '',
   newRelicLoggingLicenseKey: process.env.NEW_RELIC_LOGGING_LICENSE_KEY || '',
   sessionSecret: process.env.SESSION_SECRET || '',
+  unumAPIKey: process.env.UNUM_API_KEY || '',
+  coreServiceUrl: process.env.CORE_SERVICE_URL || '',
   ...dbConfig,
 };

@@ -43,7 +43,7 @@ declare global {
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'New Remix App',
+  title: 'Hooli',
   viewport: 'width=device-width,initial-scale=1',
 });
 
@@ -79,7 +79,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap',
+    href: '/fonts/fonts.css',
   },
 ];
 
