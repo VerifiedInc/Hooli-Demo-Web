@@ -7,13 +7,13 @@ import MaybeLaterButton from './IDDialog/MaybeLaterButton';
 import FormattedTypography from './FormattedTypography';
 
 interface IDDialogProps {
-  isSuccess: 'new' | 'success' | 'error';
+  issueCredsStatus: 'new' | 'success' | 'error';
 }
 
 /**
  * Component to pop-up and prompt user on issuing an Unum ID card. Also handles notification of successful or failed issuance.
  */
-export default ({ isSuccess }: IDDialogProps) => {
+export default ({ issueCredsStatus }: IDDialogProps) => {
   const { primary, neutral } = theme.palette;
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ export default ({ isSuccess }: IDDialogProps) => {
             p: '0.75rem',
           }}
         >
-          {isSuccess !== 'new' ? (
+          {issueCredsStatus !== 'new' ? (
             <Box display='flex' alignItems='left'>
               <IconButton aria-label='close' onClick={handleClick}>
                 <CloseIcon />
@@ -57,20 +57,20 @@ export default ({ isSuccess }: IDDialogProps) => {
             []
           )}
           <FormattedTypography variant='h4' color='primary'>
-            {isSuccess.toUpperCase()}
+            {issueCredsStatus.toUpperCase()}
           </FormattedTypography>
           <FormattedTypography
             variant='h4'
             color='primary.dark'
             sx={{ fontWeight: 900, mb: 1 }}
           >
-            {isSuccess === 'success'
+            {issueCredsStatus === 'success'
               ? 'Congratulations! Your Hooli ID card is activated.'
-              : isSuccess === 'new'
+              : issueCredsStatus === 'new'
               ? 'Get your Hooli digital ID card. \n Free forever.'
               : 'We encountered an error while issuing your Unum ID. Please try again later'}
           </FormattedTypography>
-          {isSuccess !== 'new'
+          {issueCredsStatus !== 'new'
             ? []
             : [
                 <FormattedTypography
@@ -104,7 +104,7 @@ export default ({ isSuccess }: IDDialogProps) => {
                   handleClick={handleClick}
                 />,
               ]}
-          {(isSuccess === 'success' || isSuccess === 'new') && (
+          {(issueCredsStatus === 'success' || issueCredsStatus === 'new') && (
             <img src='/id-card.svg' width={225} />
           )}
         </Box>

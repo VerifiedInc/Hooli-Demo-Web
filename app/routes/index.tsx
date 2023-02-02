@@ -15,7 +15,7 @@ import {
   useSearchParams,
 } from '@remix-run/react';
 
-type isSuccessType = 'new' | 'success' | 'error';
+type issueCredsStatusType = 'new' | 'success' | 'error';
 
 // The exported `action` function will be called when the route makes a POST request, i.e. when the form is submitted.
 export const action: ActionFunction = async ({ request }) => {
@@ -54,7 +54,8 @@ export default function HomeIndex() {
   // will be leveraged to check if prompt param is set, if so will display IDDialog
   const [searchParams] = useSearchParams();
   // indicate which 'version' of the dialog is displayed - prompt a user to join (new), failed issuance (error), successful issuance (success)
-  const [isSuccess, setIsSuccess] = useState<isSuccessType>('new');
+  const [issueCredsStatus, setIssueCredsStatus] =
+    useState<issueCredsStatusType>('new');
   // indicate whether the nav menu should be open based on the screen size
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -65,8 +66,8 @@ export default function HomeIndex() {
 
   useEffect(() => {
     actionData === 'success' || actionData === 'error'
-      ? setIsSuccess(actionData)
-      : setIsSuccess('new');
+      ? setIssueCredsStatus(actionData)
+      : setIssueCredsStatus('new');
   }, [actionData]);
 
   return (
@@ -92,7 +93,9 @@ export default function HomeIndex() {
         <NewSection />
         <RecommendationsSection />
       </Container>
-      {searchParams.get('prompt') && <IDModal isSuccess={isSuccess} />}
+      {searchParams.get('prompt') && (
+        <IDModal issueCredsStatus={issueCredsStatus} />
+      )}
     </Box>
   );
 }
