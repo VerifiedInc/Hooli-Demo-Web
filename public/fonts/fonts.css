@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'InterstateCondensed';
+  src: local('InterstateCondensed'),
+    url(./Interstate\ Condensed\ Regular.otf) format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'InterstateCondensed';
+  src: local('InterstateBold'),
+    url(./interstate-bold-cond-58b64162258ca.otf) format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'InterstateCondensed';
+  src: local('InterstateLight'),
+    url(./interstate-light-cond-58b64220b1490.otf) format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'InterstateCondensed';
+  src: local('InterstateBlack'),
+    url(./interstate-black-cond-58b642507872b.otf) format('opentype');
+  font-weight: 900;
+}

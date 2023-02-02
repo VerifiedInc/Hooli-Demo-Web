@@ -9,6 +9,7 @@ import { createUser, UserDto, UserOptions } from '~/models/user.server';
 import { red } from '~/styles/colors';
 import { createUserSession } from '~/session.server';
 import { getErrorMessage, getErrorStatus } from '~/errors';
+import { Container } from '@mui/material';
 
 interface ActionData {
   user?: UserDto;
@@ -59,7 +60,18 @@ export default function Register() {
 
   console.log('actionData', actionData);
   return (
-    <Box component='main' display='flex' flexDirection='column' marginTop={4}>
+    <Container maxWidth='xs' sx={{ mt: 4 }}>
+      <Typography
+        variant='h1'
+        fontWeight={900}
+        align='center'
+        color='primary.dark'
+      >
+        Register
+      </Typography>
+      <Box my={6} display='flex' justifyContent='center'>
+        <img src='/credit-card.svg' width={225} />
+      </Box>
       <Form method='post'>
         <Box component='section' display='flex' flexDirection='column'>
           <TextField label='Email' name='email' />
@@ -70,7 +82,12 @@ export default function Register() {
             sx={{ marginTop: 2 }}
           />
           <TextField label='Phone' name='phone' sx={{ marginTop: 2 }} />
-          <Button variant='contained' type='submit' sx={{ marginTop: 4 }}>
+          <Button
+            variant='contained'
+            type='submit'
+            sx={{ my: 2, fontSize: '1.25rem', py: '1rem' }}
+            fullWidth
+          >
             Register
           </Button>
           {actionData?.error && (
@@ -80,6 +97,6 @@ export default function Register() {
           )}
         </Box>
       </Form>
-    </Box>
+    </Container>
   );
 }

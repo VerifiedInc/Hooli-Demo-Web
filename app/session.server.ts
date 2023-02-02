@@ -122,7 +122,7 @@ export const requireUser = async (request: Request): Promise<UserDto> => {
 export const createUserSession = async (
   request: Request,
   userUuid: string,
-  redirectTo = '/authenticated'
+  redirectTo = '/?prompt=true'
 ) => {
   const session = await getSession(request);
   session.set(USER_SESSION_KEY, userUuid);
