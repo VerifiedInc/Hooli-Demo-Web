@@ -3,7 +3,9 @@ import { logger } from './logger.server';
 import { UserDto } from './models/user.server';
 
 /**
- * Function to make POST request to the Core Service API /issueCredentials endpoint.
+ * Function to make POST request to Unum ID's Core Service API /issueCredentials endpoint.
+ * Please note: This functionality is NOT and should NOT be called in the browser due to the sensitive nature
+ * of the API key (unumAPIKey).
  * @param {UserDto} user
  * @returns {Promise<'success' | 'error'>}
  */
@@ -33,7 +35,7 @@ export const issueCredentials = async (
       body,
     });
     credentials = await credentials.json();
-    console.log(credentials);
+    logger.info(`Credentials issued for ${email}. Credentials: ${credentials}`);
   } catch (e) {
     logger.error(`issueCredentials for ${email} failed. Error: ${e}`);
     throw e;
