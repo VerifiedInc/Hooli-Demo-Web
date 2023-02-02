@@ -13,13 +13,13 @@ interface NavBarProps {
  * Collapsible for smaller/mobile devices
  */
 export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
-  const drawerWidth = 250;
+  const drawerWidth = 300;
 
   return (
     <nav>
       <Drawer
         sx={{
-          display: { sm: 'block', md: 'none' },
+          display: { xs: 'block', sm: 'block', md: 'none' },
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
@@ -37,7 +37,7 @@ export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
       </Drawer>
       <Drawer
         sx={{
-          display: { sm: 'none', md: 'block' },
+          display: { xs: 'none', sm: 'none', md: 'block' },
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',

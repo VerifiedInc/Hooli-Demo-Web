@@ -72,16 +72,19 @@ export default function HomeIndex() {
   return (
     <Box
       component='main'
-      display='flex'
-      flexDirection='column'
-      sx={{ bgcolor: 'neutral.light', maxWidth: '100% !important', margin: 0 }}
+      sx={{
+        bgcolor: 'neutral.light',
+        margin: 0,
+        display: 'flex',
+        justifyContent: 'flex-start',
+      }}
     >
+      <NavBar
+        mobileOpen={mobileOpen}
+        handleDrawerToggle={handleDrawerToggle}
+        email={data.user.email}
+      />
       <Container maxWidth='md'>
-        <NavBar
-          mobileOpen={mobileOpen}
-          handleDrawerToggle={handleDrawerToggle}
-          email={data.user.email}
-        />
         <TopSection
           email={data.user.email}
           handleDrawerToggle={handleDrawerToggle}

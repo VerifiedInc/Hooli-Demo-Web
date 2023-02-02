@@ -19,7 +19,9 @@ interface NavListProps {
  */
 export default ({ email }: NavListProps) => {
   return (
-    <div>
+    <div
+      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
       <List>
         {[email, 'Recommendations', 'Settings'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -38,10 +40,8 @@ export default ({ email }: NavListProps) => {
           </ListItem>
         ))}
       </List>
-      <List
-        sx={{ position: 'absolute', bottom: '0', justifyContent: 'center' }}
-      >
-        <ListItem>
+      <List sx={{ position: 'absolute', bottom: '0' }}>
+        <ListItem alignItems='center' disableGutters>
           <Form method='post'>
             <Button
               name='intent'

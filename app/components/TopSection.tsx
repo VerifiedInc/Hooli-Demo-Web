@@ -32,8 +32,8 @@ export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
         sx={{
           position: 'absolute',
           top: 0,
-          left: { xs: '2rem', sm: '4rem' },
-          display: { md: 'none' },
+          left: { xs: '3rem', sm: '4rem' },
+          display: { lg: 'none' },
           color: 'primary.contrastText',
         }}
       >
