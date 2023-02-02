@@ -53,9 +53,6 @@ export default function HomeIndex() {
   const actionData = useActionData<typeof action>();
   // will be leveraged to check if prompt param is set, if so will display IDDialog
   const [searchParams] = useSearchParams();
-  // indicate which 'version' of the dialog is displayed - prompt a user to join (new), failed issuance (error), successful issuance (success)
-  const [issueCredsStatus, setIssueCredsStatus] =
-    useState<issueCredsStatusType>('new');
   // indicate whether the nav menu should be open based on the screen size
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -64,11 +61,8 @@ export default function HomeIndex() {
     setMobileOpen(!mobileOpen);
   };
 
-  useEffect(() => {
-    actionData === 'success' || actionData === 'error'
-      ? setIssueCredsStatus(actionData)
-      : setIssueCredsStatus('new');
-  }, [actionData]);
+  // indicate which 'version' of the dialog is displayed - prompt a user to join (new), failed issuance (error), successful issuance (success)
+  const issueCredsStatus: issueCredsStatusType = actionData || 'new';
 
   return (
     <Box
@@ -93,8 +87,10 @@ export default function HomeIndex() {
         <NewSection />
         <RecommendationsSection />
       </Container>
-      {searchParams.get('prompt') && (
+      {searchParams.get('prompt') === 'true' ? (
         <IDModal issueCredsStatus={issueCredsStatus} />
+      ) : (
+        []
       )}
     </Box>
   );
