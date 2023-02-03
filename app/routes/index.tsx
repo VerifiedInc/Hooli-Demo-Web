@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import { useEffect, useState } from 'react';
-import { getUser, logout, requireUser } from '../session.server';
+import { useState } from 'react';
+import { getUserEmail, logout, requireUserEmail } from '../session.server';
 import { issueCredentials } from '../coreAPI.server';
 import IDModal from '../components/IDDialog';
 import { Container } from '@mui/system';
@@ -29,8 +29,8 @@ export const action: ActionFunction = async ({ request }) => {
       return await logout(request);
     }
     case 'activate1Click': {
-      const user = await getUser(request);
-      return await issueCredentials(user);
+      const email = await getUserEmail(request);
+      return await issueCredentials(email);
     }
     default: {
       return null;
@@ -40,10 +40,10 @@ export const action: ActionFunction = async ({ request }) => {
 
 // The exported `loader` function will be called when the route makes a GET request, i.e. when it is rendered
 export const loader: LoaderFunction = async ({ request }) => {
-  // requireUser will redirect to the login page if the user is not logged in
-  const user = await requireUser(request);
-  // return user to route so user information can be leveraged
-  return json({ user });
+  // requireUserEmail will redirect to the login page if the user is not logged in
+  const email = await requireUserEmail(request);
+  // return user email to route so it can be leveraged
+  return json({ email });
 };
 
 export default function HomeIndex() {
@@ -77,11 +77,11 @@ export default function HomeIndex() {
       <NavBar
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
-        email={data.user.email}
+        email={data.email}
       />
       <Container maxWidth='md'>
         <TopSection
-          email={data.user.email}
+          email={data.email}
           handleDrawerToggle={handleDrawerToggle}
         />
         <NewSection />

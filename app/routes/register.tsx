@@ -5,14 +5,12 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import { createUser, UserDto, UserOptions } from '~/models/user.server';
 import { red } from '~/styles/colors';
 import { createUserSession } from '~/session.server';
 import { getErrorMessage, getErrorStatus } from '~/errors';
 import { Container } from '@mui/material';
 
 interface ActionData {
-  user?: UserDto;
   error?: string;
 }
 
@@ -40,16 +38,8 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ error: 'Invalid form data' }, { status: 400 });
   }
 
-  const userOptions: UserOptions = {
-    email,
-    password,
-    phone: phone || undefined,
-  };
-
   try {
-    const user = await createUser(userOptions);
-
-    return createUserSession(request, user.uuid);
+    return createUserSession(request, email);
   } catch (e) {
     return json({ error: getErrorMessage(e) }, { status: getErrorStatus(e) });
   }
@@ -58,7 +48,6 @@ export const action: ActionFunction = async ({ request }) => {
 export default function Register() {
   const actionData: ActionData | undefined = useActionData<typeof action>();
 
-  console.log('actionData', actionData);
   return (
     <Container maxWidth='xs' sx={{ mt: 4 }}>
       <Typography

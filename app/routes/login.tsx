@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { theme } from '~/styles/theme';
 
 import { red } from '~/styles/colors';
-import { login } from '~/models/user.server';
 import { createUserSession } from '~/session.server';
 import { getErrorMessage, getErrorStatus } from '~/errors';
 import { Container } from '@mui/material';
@@ -35,11 +34,8 @@ export const action: ActionFunction = async ({ request }) => {
   }
 
   try {
-    // log the user in
-    const user = await login(email, password);
-
     // set the session cookie and redirect to the home page
-    return createUserSession(request, user.uuid);
+    return createUserSession(request, email);
   } catch (e) {
     return json({ error: getErrorMessage(e) }, { status: getErrorStatus(e) });
   }
