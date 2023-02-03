@@ -8,10 +8,9 @@ import {
   ListItemText,
 } from '@mui/material';
 import { Form } from '@remix-run/react';
-import { UserDto } from '~/models/user.server';
 
 interface NavListProps {
-  email: UserDto['email'];
+  email: string;
 }
 
 /**

@@ -1,11 +1,10 @@
 import { Drawer } from '@mui/material';
-import { UserDto } from '~/models/user.server';
 import NavList from './NavList';
 
 interface NavBarProps {
   mobileOpen: boolean;
   handleDrawerToggle: () => void;
-  email: UserDto['email'];
+  email: string;
 }
 
 /**
