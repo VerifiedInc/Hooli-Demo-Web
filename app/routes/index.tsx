@@ -70,8 +70,6 @@ export default function HomeIndex() {
       sx={{
         bgcolor: 'neutral.light',
         margin: 0,
-        display: 'flex',
-        justifyContent: 'flex-start',
       }}
     >
       <NavBar
