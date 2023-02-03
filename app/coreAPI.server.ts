@@ -42,9 +42,8 @@ export const issueCredentials = async (
   }
 
   if (credentials?.code) {
-    const { errors } = credentials;
     logger.debug(
-      `No credentials issued for ${email}. Number of errors: ${errors.length}. First error: ${errors[0].message}`
+      `No credentials issued for ${email}. Error: ${credentials.message}`
     );
     return 'error';
   }
