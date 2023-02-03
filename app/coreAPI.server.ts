@@ -31,9 +31,6 @@ export const issueCredentials = async (
       body,
     });
     credentials = await credentials.json();
-    logger.info(
-      `Credentials issued for ${email}. Credentials: ${credentials.message}`
-    );
   } catch (e) {
     logger.error(`issueCredentials for ${email} failed. Error: ${e}`);
     throw e;
@@ -45,6 +42,8 @@ export const issueCredentials = async (
     );
     return 'error';
   }
-
+  logger.info(
+    `Credentials successfully issued for ${email}. Total credentials issued: ${credentials.length}`
+  );
   return 'success';
 };
