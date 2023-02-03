@@ -37,7 +37,7 @@ export const getSession = async (request: Request) => {
 /**
  * Gets the user from the session
  * @param {Request} request
- * @returns {Promise<UserDto | null>} user
+ * @returns {Promise<string | null>} user
  */
 export const getUserEmail = async (request: Request) => {
   const session = await getSession(request);
@@ -65,7 +65,7 @@ export const logout = async (request: Request) => {
  * Requires an authenticated user w/ email to be in the session for a request
  * logs out if no user is found
  * @param {Request} request
- * @returns {Promise<UserDto>} user
+ * @returns {Promise<string>} email
  */
 export const requireUserEmail = async (request: Request): Promise<string> => {
   const email = await getUserEmail(request);
