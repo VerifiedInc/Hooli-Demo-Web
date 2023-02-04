@@ -19,12 +19,15 @@ export default ({ title, body, plusNumber }: RecommendationsBoxProps) => {
       <Box
         sx={{
           bgcolor: 'primary.main',
-          mx: 2,
-          mt: 2,
-          mb: 8,
-          borderRadius: 1,
-          py: 1,
+          height: 40,
+          width: 40,
           px: 2,
+          borderRadius: 1,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          ml: 2,
+          mt: 2,
         }}
       >
         <Typography

@@ -18,7 +18,7 @@ export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
     <nav>
       <Drawer
         sx={{
-          display: { xs: 'block', sm: 'block', md: 'none' },
+          display: { xs: 'block', sm: 'block', md: 'block', lg: 'none' },
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
@@ -36,7 +36,7 @@ export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
       </Drawer>
       <Drawer
         sx={{
-          display: { xs: 'none', sm: 'none', md: 'block' },
+          display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',

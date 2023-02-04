@@ -22,6 +22,7 @@ export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
+        position: 'relative',
       }}
     >
       <IconButton
@@ -31,7 +32,7 @@ export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
         sx={{
           position: 'absolute',
           top: 0,
-          left: { xs: '3rem', sm: '4rem' },
+          left: 12,
           display: { lg: 'none' },
           color: 'primary.contrastText',
         }}
@@ -40,7 +41,7 @@ export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
       </IconButton>
       <img src='/100.svg' />
       <ModalTypography variant='h1' color='primary.contrastText'>
-        Welcome, {email}!
+        Welcome, {email.split('@')[0]}!
       </ModalTypography>
       <ModalTypography variant='body1' color='primary.contrastText'>
         You're verified!

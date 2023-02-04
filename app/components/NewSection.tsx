@@ -15,7 +15,16 @@ export default () => {
       >
         New
       </Typography>
-      <Box sx={{ mx: 2, mt: 2, mb: 0 }}>
+      <Box sx={{ mx: 2, mt: 2, mb: 0, position: 'relative' }}>
+        <Typography
+          variant='h1'
+          color='primary.contrastText'
+          position='absolute'
+          right={24}
+          top={8}
+        >
+          $25
+        </Typography>
         <img
           style={{ marginBottom: 0 }}
           width='100%'
@@ -25,11 +34,12 @@ export default () => {
       <Box
         sx={{
           bgcolor: 'white',
-          py: 1,
+          pt: 2,
+          pb: 1,
           mx: 2,
           mb: 1,
-          borderBottomLeftRadius: 4,
-          borderBottomRightRadius: 4,
+          mt: -1,
+          borderRadius: '0 0 8px 8px',
         }}
       >
         <Typography
