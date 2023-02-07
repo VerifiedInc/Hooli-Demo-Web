@@ -41,7 +41,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           display='flex'
           flexDirection='column'
           alignItems='center'
-          width='20rem'
+          maxWidth='20rem'
           maxHeight='45rem'
           sx={{
             p: '0.75rem',
