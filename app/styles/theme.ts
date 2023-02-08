@@ -188,6 +188,7 @@ export const theme = createTheme({
             zIndex: -1,
             background: 'var(--background, inherit)',
           },
+          color: colors.darkBlue,
         },
         shrink: {
           ...typography.label,
