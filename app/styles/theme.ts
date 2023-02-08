@@ -66,28 +66,24 @@ const typography = {
     letterSpacing: '0.15px',
   },
   subtitle1: {
-    fontFamily: 'Lato',
     fontSize: '1rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.1875,
   },
   subtitle2: {
-    fontFamily: 'Lato',
     fontSize: '0.875rem',
     fontWeight: 700,
     letterSpacing: 0.1,
     lineHeight: 1.5,
   },
   body1: {
-    fontFamily: 'Lato',
     fontSize: '1.25rem',
     fontWeight: 300,
     letterSpacing: 0,
     lineHeight: 1.2,
   },
   body2: {
-    fontFamily: 'Lato',
     fontSize: '1rem',
     fontWeight: 400,
     letterSpacing: 0,
