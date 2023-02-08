@@ -12,6 +12,8 @@ interface TopSectionIndexProps {
  * Component which displays the top section of content for the root url - includes image of gold medal and welcome message.
  */
 export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
+  const name = email.split('@')[0];
+
   return (
     <Box
       sx={{
@@ -41,7 +43,7 @@ export default ({ email, handleDrawerToggle }: TopSectionIndexProps) => {
       </IconButton>
       <img src='/100.svg' />
       <ModalTypography variant='h1' color='primary.contrastText'>
-        Welcome, {email.split('@')[0]}!
+        Welcome, {name.charAt(0).toUpperCase() + name.slice(1)}!
       </ModalTypography>
       <ModalTypography variant='body1' color='primary.contrastText'>
         You're verified!
