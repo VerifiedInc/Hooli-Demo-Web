@@ -1,35 +1,22 @@
-# Remix MUI Knex Starter
+# README: Hooli Web Demo
 
-Learn more about [Remix Stacks](https://remix.run/stacks).
+## Overview
 
-Because this stack is hosted as a private repo, you'll need a [Github Token](https://github.com/settings/tokens/new?description=Remix%20Private%20Stack%20Access&scopes=repo) to use it.
+> This project acts as a simple web application for a fictional customer, Hooli, which uses Unum ID to issue reusable [credentials](https://docs.unumid.co/terminology#credential) to its users. Additional information on how to issue credentials can be found [here](https://docs.unumid.co/api-overview#issue-credentials).
 
+The Hooli Web Demo is implemented using the [Remix](https://remix.run/docs) full stack web framework. Additional information about the Unum ID demo ecosystem can be found in our [documentation](https://docs.unumid.co/hooli-demo-idv).
+
+## Interacting with the Demo
+
+### Getting Started
+
+Install necessary dependencies
+
+```sh
+npm install
 ```
-npx create-remix@latest --template unumid/remix-mui-knex-starter --token GITHUB_TOKEN
-```
 
-## What's in the stack
-
-- [TypeScript](https://typescriptlang.org).
-- UI with [MUI](https://mui.com).
-- Database (postgres) connection with [Knex](https://knexjs.org).
-- Basic user model
-- Basic user session functionality
-- Basic login and register routes
-- Example route requiring authentication
-- Linting with [ESLint](https://eslint.org).
-- Code formatting with [Prettier](https://prettier.io), enforced with a precommit hook.
-- Unit testing with [jest](https://jestjs/io) and [testing-library](https://testing-library.com).
-- CI/CD with [CircleCI](https://circleci.com) and [Docker](https://docker.com).
-- Logging + Observability with [Winston](https://github.com/winstonjs/winston), [New Relic](https://newrelic.com), and [LogRocket](https://logrocket.com).
-- Lato and Playfair Display fonts from Google Fonts.
-- Basic CSP setup.
-
-## Remix
-
-- [Remix Docs](https://remix.run/docs)
-
-### Development
+### Running the Demo in Development
 
 Start the Remix development asset server and the Express server by running:
 
@@ -37,42 +24,8 @@ Start the Remix development asset server and the Express server by running:
 npm run dev
 ```
 
-This starts your app in development mode, which will purge the server require cache when Remix rebuilds assets so you don't need a process manager restarting the express server.
+The demo will launch on port 7040.
 
-### Deployment
+### Using the Demo
 
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-#### DIY
-
-If you're familiar with deploying express applications you should be right at home just make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-#### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+Once launched, the application will take you to a sample login page. In order to sign in, you may enter any combination of email address and password. _Please note_, if the email address is not valid email format, credentials will not successfully issue on subsequent screens.
