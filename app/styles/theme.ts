@@ -76,7 +76,7 @@ const typography = {
     fontSize: '0.875rem',
     fontWeight: 400,
     letterSpacing: 0.1,
-    lineHeight: 1.5,
+    lineHeight: 1.133,
   },
   body1: {
     fontSize: '1.25rem',

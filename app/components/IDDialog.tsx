@@ -1,8 +1,7 @@
 import { Box, Button, Dialog, Fade, IconButton, Link } from '@mui/material';
 import { theme } from '~/styles/theme';
-import { useNavigate } from '@remix-run/react';
+import { Form, useNavigate } from '@remix-run/react';
 import CloseIcon from '@mui/icons-material/Close';
-import ActivateButton from './IDDialog/ActivateButton';
 import MaybeLaterButton from './IDDialog/MaybeLaterButton';
 import FormattedTypography from './FormattedTypography';
 
@@ -78,13 +77,25 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   Use it to 1-click verify your identity. No more forms. No more
                   hassle <em>Welcome to a faster future.</em>
                 </FormattedTypography>,
-                <ActivateButton key='activate-button-dialog' />,
-                <img
-                  style={{ marginTop: 6 }}
-                  width={140}
-                  src='/powered_by_unum.png'
-                  key='powered-by-dialog'
-                />,
+                <Form method='post' key='activate-button-dailog-new'>
+                  <Button
+                    name='intent'
+                    value='activate1Click'
+                    type='submit'
+                    sx={{
+                      mt: 1,
+                      width: 241,
+                      '&:hover': {
+                        backgroundColor: 'transparent',
+                      },
+                    }}
+                  >
+                    <img
+                      width={241}
+                      src='/activate_button_with_powered_by_(Hooli).png'
+                    />
+                  </Button>
+                </Form>,
                 <FormattedTypography
                   variant='caption'
                   color='neutral.main'
@@ -102,7 +113,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                 />,
               ]}
           {(issueCredsStatus === 'success' || issueCredsStatus === 'new') && (
-            <img src='/id-card.svg' width={225} />
+            <img src='/id-card.svg' />
           )}
         </Box>
       </Fade>
