@@ -84,14 +84,14 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                     type='submit'
                     sx={{
                       mt: 1,
-                      width: 221,
+                      width: 241.25,
                       '&:hover': {
                         backgroundColor: 'transparent',
                       },
                     }}
                   >
                     <img
-                      width={221}
+                      width={241.25}
                       src='/activate_button_with_powered_by_(Hooli).png'
                     />
                   </Button>
