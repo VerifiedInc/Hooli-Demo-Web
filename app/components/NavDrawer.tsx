@@ -1,7 +1,7 @@
 import { Drawer } from '@mui/material';
 import NavList from './NavList';
 
-interface NavBarProps {
+interface NavDrawerProps {
   mobileOpen: boolean;
   handleDrawerToggle: () => void;
   email: string;
@@ -11,7 +11,7 @@ interface NavBarProps {
  * Nav menu for application once logged-in. Vertical design and fixed open on left-hand side of screen for desktop.
  * Collapsible for smaller/mobile devices
  */
-export default ({ mobileOpen, handleDrawerToggle, email }: NavBarProps) => {
+export default ({ mobileOpen, handleDrawerToggle, email }: NavDrawerProps) => {
   const drawerWidth = 300;
 
   return (

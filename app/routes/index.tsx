@@ -7,7 +7,7 @@ import { Container } from '@mui/system';
 import TopSection from '../components/TopSection';
 import NewSection from '../components/NewSection';
 import RecommendationsSection from '../components/RecommendationsSection';
-import NavBar from '../components/NavBar';
+import NavDrawer from '../components/NavDrawer';
 import { ActionFunction, json, LoaderFunction } from '@remix-run/node';
 import {
   useActionData,
@@ -72,7 +72,7 @@ export default function HomeIndex() {
         margin: 0,
       }}
     >
-      <NavBar
+      <NavDrawer
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
         email={data.email}
