@@ -37,19 +37,19 @@ const typography = {
     lineHeight: 1.35,
   },
   h2: {
-    fontSize: '1.5rem',
+    fontSize: '1.4rem',
     fontWeight: 900,
     letterSpacing: 0,
     lineHeight: 1,
   },
   h3: {
-    fontSize: '1.5rem',
+    fontSize: '1.4rem',
     fontWeight: 700,
     letterSpacing: 0.3,
     lineHeight: 1.35,
   },
   h4: {
-    fontSize: '1.25rem',
+    fontSize: '1.15rem',
     fontWeight: 700,
     letterSpacing: 0,
     lineHeight: 1.2,
@@ -97,7 +97,7 @@ const typography = {
     lineHeight: 1.2,
   },
   caption: {
-    fontSize: '0.65rem',
+    fontSize: '0.5rem',
     fontWeight: 400,
     letterSpacing: 0,
     lineHeight: 1.25,

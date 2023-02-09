@@ -42,8 +42,8 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           alignItems='center'
           maxWidth='23rem'
           sx={{
-            pt: '1.75rem',
-            pb: '2.75rem',
+            pt: '1.65rem',
+            pb: '2.65rem',
             px: '2.5rem',
           }}
         >
@@ -84,14 +84,14 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                     type='submit'
                     sx={{
                       mt: 1,
-                      width: 241,
+                      width: 221,
                       '&:hover': {
                         backgroundColor: 'transparent',
                       },
                     }}
                   >
                     <img
-                      width={241}
+                      width={221}
                       src='/activate_button_with_powered_by_(Hooli).png'
                     />
                   </Button>
@@ -99,13 +99,21 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                 <FormattedTypography
                   variant='caption'
                   color='neutral.main'
-                  sx={{ mt: 1 }}
+                  sx={{ mt: 0, px: '1rem', fontFamily: 'Lato' }}
                   key='legal-links-dialog'
                 >
-                  By activating you agree to create an Unum ID account under
-                  their
-                  <Link color='neutral.main'>Terms of Use</Link> and
-                  <Link color='neutral.main'> Privacy Policy</Link>.
+                  By clicking this button, I agree to Unum ID's{' '}
+                  <Link href='https://unumid.co/legal' color='neutral.main'>
+                    Terms of Use
+                  </Link>{' '}
+                  and direct Hooli to share my personal information with Unum ID
+                  to provide its digital ID card services, in accordance with
+                  its{' '}
+                  <Link href='https://unumid.co/legal' color='neutral.main'>
+                    {' '}
+                    Privacy Policy
+                  </Link>
+                  .
                 </FormattedTypography>,
                 <MaybeLaterButton
                   key='maybe-later-button-dialog'
@@ -113,7 +121,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                 />,
               ]}
           {(issueCredsStatus === 'success' || issueCredsStatus === 'new') && (
-            <img src='/id-card.svg' />
+            <img src='/id-card.svg' width={225} />
           )}
         </Box>
       </Fade>
