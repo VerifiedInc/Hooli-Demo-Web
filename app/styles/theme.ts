@@ -278,6 +278,7 @@ export const theme = createTheme({
       defaultProps: {
         sx: {
           borderRadius: 2,
+          fontFamily: 'Interstate',
         },
       },
     },
