@@ -121,7 +121,14 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                 />,
               ]}
           {(issueCredsStatus === 'success' || issueCredsStatus === 'new') && (
-            <img src='/id-card.svg' width={225} />
+            <img
+              src='/id-card-hooli.png'
+              width={225}
+              style={{
+                filter: 'drop-shadow(0px 2px 2px rgba(0,0,0,0.5))',
+                backgroundColor: 'none',
+              }}
+            />
           )}
         </Box>
       </Fade>
