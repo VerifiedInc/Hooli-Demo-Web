@@ -25,3 +25,10 @@
     url(./interstate-black-cond-58b642507872b.otf) format('opentype');
   font-weight: 900;
 }
+
+@font-face {
+  font-family: 'Interstate';
+  src: local('InterstateRegular'),
+    url(./Interstate-regular.ttf) format('truetype');
+  font-weight: 400;
+}

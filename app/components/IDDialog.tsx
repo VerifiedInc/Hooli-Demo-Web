@@ -1,4 +1,4 @@
-import { Box, Dialog, Fade, IconButton, Link } from '@mui/material';
+import { Box, Button, Dialog, Fade, IconButton, Link } from '@mui/material';
 import { theme } from '~/styles/theme';
 import { useNavigate } from '@remix-run/react';
 import CloseIcon from '@mui/icons-material/Close';
@@ -41,7 +41,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           display='flex'
           flexDirection='column'
           alignItems='center'
-          maxWidth='20rem'
+          maxWidth='23rem'
           sx={{
             pt: '1.75rem',
             pb: '2.75rem',
@@ -57,14 +57,10 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           ) : (
             []
           )}
-          <FormattedTypography variant='h4' color='primary'>
+          <FormattedTypography variant='h3' color='primary'>
             {issueCredsStatus.toUpperCase()}
           </FormattedTypography>
-          <FormattedTypography
-            variant='h4'
-            color='primary.dark'
-            sx={{ fontWeight: 900, mb: 1 }}
-          >
+          <FormattedTypography variant='h2' color='primary.dark'>
             {issueCredsStatus === 'success'
               ? 'Congratulations! Your Hooli ID card is activated.'
               : issueCredsStatus === 'new'
@@ -76,7 +72,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
             : [
                 <FormattedTypography
                   variant='subtitle2'
-                  color='neutral.dark'
+                  color='neutral.main'
                   key='description-dialog'
                 >
                   Use it to 1-click verify your identity. No more forms. No more

@@ -14,6 +14,9 @@ export default ({ handleClick }: MaybeLaterButtonProps) => {
       sx={{
         bgcolor: 'neutral.main',
         color: 'white',
+        py: 1,
+        px: 2,
+        borderRadius: 1.5,
         m: '1rem',
       }}
     >

@@ -38,14 +38,14 @@ const typography = {
   },
   h2: {
     fontSize: '1.5rem',
-    fontWeight: 700,
+    fontWeight: 900,
     letterSpacing: 0,
-    lineHeight: 1.33,
+    lineHeight: 1,
   },
   h3: {
-    fontSize: '1.25rem',
+    fontSize: '1.5rem',
     fontWeight: 700,
-    letterSpacing: 0,
+    letterSpacing: 0.3,
     lineHeight: 1.35,
   },
   h4: {
@@ -72,8 +72,9 @@ const typography = {
     lineHeight: 1.1875,
   },
   subtitle2: {
+    fontFamily: 'Interstate',
     fontSize: '0.875rem',
-    fontWeight: 700,
+    fontWeight: 400,
     letterSpacing: 0.1,
     lineHeight: 1.5,
   },
@@ -108,6 +109,7 @@ const typography = {
     lineHeight: 1.25,
   },
   label: {
+    fontFamily: 'Interstate',
     fontSize: '0.75rem',
     fontWeight: 700,
     letterSpacing: 1,
@@ -160,9 +162,6 @@ export const theme = createTheme({
       dark: colors.darkGrey,
     },
   },
-  shape: {
-    borderRadius: 8,
-  },
   components: {
     MuiAlertTitle: {
       styleOverrides: {
@@ -177,6 +176,8 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           marginLeft: '0.15rem',
+          fontFamily: 'Interstate',
+          fontSize: '1rem',
           '&:before': {
             content: '""',
             position: 'absolute',
@@ -268,6 +269,13 @@ export const theme = createTheme({
         variant: 'filled',
         fullWidth: true,
         InputProps: { disableUnderline: true },
+      },
+    },
+    MuiFilledInput: {
+      defaultProps: {
+        sx: {
+          borderRadius: 2,
+        },
       },
     },
   },

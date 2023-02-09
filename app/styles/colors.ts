@@ -18,5 +18,5 @@ export const lightYellow = '#5ef06d';
 export const darkYellow = '#bea008';
 
 export const lightGrey = '#F6F6F8';
-export const grey = '#bdbdbd';
-export const darkGrey = 'rgba(0, 0, 0, 0.6)';
+export const grey = '#757575';
+export const darkGrey = '#848484';
