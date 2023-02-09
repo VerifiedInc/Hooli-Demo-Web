@@ -55,7 +55,7 @@ export default function Login() {
         Welcome!
       </Typography>
       <Box my={6} display='flex' justifyContent='center'>
-        <img src='/credit-card.svg' width={225} />
+        <img src='/credit-card.svg' width={231} height={183} />
       </Box>
 
       <Form method='post'>
@@ -79,6 +79,7 @@ export default function Login() {
             to='/register'
             style={{
               color: theme.palette.primary.dark,
+              fontFamily: 'Interstate',
               fontSize: '1rem',
               textAlign: 'center',
             }}

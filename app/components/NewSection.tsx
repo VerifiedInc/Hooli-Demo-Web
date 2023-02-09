@@ -17,13 +17,13 @@ export default () => {
       </Typography>
       <Box sx={{ mx: 2, mt: 2, mb: 0, position: 'relative' }}>
         <Typography
-          variant='h1'
+          variant='h2'
           color='primary.contrastText'
           position='absolute'
-          right={24}
-          top={8}
+          right={21}
+          top={18}
         >
-          $25
+          Get $25 free!
         </Typography>
         <img
           style={{ marginBottom: 0 }}
