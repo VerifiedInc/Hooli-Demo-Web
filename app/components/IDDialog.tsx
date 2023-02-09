@@ -41,6 +41,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           flexDirection='column'
           alignItems='center'
           maxWidth='23rem'
+          position='relative'
           sx={{
             pt: '1.65rem',
             pb: '2.65rem',
@@ -48,18 +49,32 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
           }}
         >
           {issueCredsStatus !== 'new' ? (
-            <Box display='flex' alignItems='left'>
-              <IconButton aria-label='close' onClick={handleClick}>
-                <CloseIcon />
-              </IconButton>
-            </Box>
+            <IconButton
+              aria-label='close'
+              onClick={handleClick}
+              size='small'
+              sx={{
+                position: 'absolute',
+                top: 10,
+                right: 10,
+                width: 30,
+                height: 30,
+                fontSize: '2rem',
+              }}
+            >
+              <CloseIcon fontSize='inherit' />
+            </IconButton>
           ) : (
             []
           )}
           <FormattedTypography variant='h3' color='primary'>
             {issueCredsStatus.toUpperCase()}
           </FormattedTypography>
-          <FormattedTypography variant='h2' color='primary.dark'>
+          <FormattedTypography
+            variant='h2'
+            color='primary.dark'
+            sx={{ mb: issueCredsStatus === 'success' ? 4 : 0 }}
+          >
             {issueCredsStatus === 'success'
               ? 'Congratulations! Your Hooli ID card is activated.'
               : issueCredsStatus === 'new'
