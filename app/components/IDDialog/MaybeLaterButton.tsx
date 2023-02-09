@@ -12,12 +12,15 @@ export default ({ handleClick }: MaybeLaterButtonProps) => {
     <Button
       onClick={handleClick}
       sx={{
-        bgcolor: 'neutral.main',
+        bgcolor: 'neutral.dark',
         color: 'white',
         py: 1,
         px: 2,
         borderRadius: 1.5,
         m: '1rem',
+        '&:hover': {
+          bgcolor: 'neutral.main',
+        },
       }}
     >
       Maybe Later
