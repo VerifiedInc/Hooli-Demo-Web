@@ -258,6 +258,9 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        text: {
+          color: colors.white,
+        },
         root: {
           textTransform: 'none',
         },
