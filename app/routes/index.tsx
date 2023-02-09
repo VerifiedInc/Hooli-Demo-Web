@@ -81,9 +81,8 @@ export default function HomeIndex() {
         sx={{
           display: { lg: 'none' },
           position: 'absolute',
-          top: 12,
-          left: 12,
-          width: 60,
+          top: 8,
+          left: 15,
           color: 'primary.contrastText',
           alignContent: 'center',
           mx: 0,
