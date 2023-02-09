@@ -1,5 +1,8 @@
 import { AppBar, Box, Toolbar } from '@mui/material';
 
+/**
+ * Formatted and branded MUI AppBar to appear at the top of all pages in the demo.
+ */
 export default () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
