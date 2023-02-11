@@ -7,13 +7,15 @@ import { Container } from '@mui/system';
 import TopSection from '../components/TopSection';
 import NewSection from '../components/NewSection';
 import RecommendationsSection from '../components/RecommendationsSection';
-import NavBar from '../components/NavBar';
+import NavDrawer from '../components/NavDrawer';
 import { ActionFunction, json, LoaderFunction } from '@remix-run/node';
 import {
   useActionData,
   useLoaderData,
   useSearchParams,
 } from '@remix-run/react';
+import { IconButton } from '@mui/material';
+import { Menu } from '@mui/icons-material';
 
 type issueCredsStatusType = 'new' | 'success' | 'error';
 
@@ -72,16 +74,29 @@ export default function HomeIndex() {
         margin: 0,
       }}
     >
-      <NavBar
+      <IconButton
+        aria-label='open drawer'
+        edge='start'
+        onClick={handleDrawerToggle}
+        sx={{
+          display: { lg: 'none' },
+          position: 'absolute',
+          top: 8,
+          left: 15,
+          color: 'primary.contrastText',
+          alignContent: 'center',
+          mx: 0,
+        }}
+      >
+        <Menu />
+      </IconButton>
+      <NavDrawer
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
         email={data.email}
       />
       <Container maxWidth='md'>
-        <TopSection
-          email={data.email}
-          handleDrawerToggle={handleDrawerToggle}
-        />
+        <TopSection email={data.email} />
         <NewSection />
         <RecommendationsSection />
       </Container>

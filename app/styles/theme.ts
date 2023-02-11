@@ -259,6 +259,9 @@ export const theme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        text: {
+          color: colors.white,
+        },
         root: {
           textTransform: 'none',
         },
@@ -275,6 +278,7 @@ export const theme = createTheme({
       defaultProps: {
         sx: {
           borderRadius: 2,
+          fontFamily: 'Interstate',
         },
       },
     },
