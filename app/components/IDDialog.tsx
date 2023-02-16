@@ -92,6 +92,31 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   Use it to 1-click verify your identity. No more forms. No more
                   hassle <em>Welcome to a faster future.</em>
                 </FormattedTypography>,
+                <FormattedTypography
+                  variant='caption'
+                  color='neutral.main'
+                  sx={{ px: '0.8rem', fontFamily: 'Lato' }}
+                  key='legal-links-dialog'
+                >
+                  By clicking the button below, you agree to our{' '}
+                  <Link
+                    href='https://unumid.co/legal/terms-of-use'
+                    color='secondary.main'
+                  >
+                    Terms of Use
+                  </Link>{' '}
+                  and direct Hooli to share your personal information with Unum
+                  ID to provide its digital ID card services, in accordance with
+                  its{' '}
+                  <Link
+                    href='https://unumid.co/legal/privacy-policy'
+                    color='secondary.main'
+                  >
+                    {' '}
+                    Privacy Policy
+                  </Link>
+                  .
+                </FormattedTypography>,
                 <Form method='post' key='activate-button-dailog-new'>
                   <Button
                     name='intent'
@@ -111,25 +136,6 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                     />
                   </Button>
                 </Form>,
-                <FormattedTypography
-                  variant='caption'
-                  color='neutral.main'
-                  sx={{ mt: 0, px: '1rem', fontFamily: 'Lato' }}
-                  key='legal-links-dialog'
-                >
-                  By clicking this button, I agree to Unum ID's{' '}
-                  <Link href='https://unumid.co/legal' color='neutral.main'>
-                    Terms of Use
-                  </Link>{' '}
-                  and direct Hooli to share my personal information with Unum ID
-                  to provide its digital ID card services, in accordance with
-                  its{' '}
-                  <Link href='https://unumid.co/legal' color='neutral.main'>
-                    {' '}
-                    Privacy Policy
-                  </Link>
-                  .
-                </FormattedTypography>,
                 <MaybeLaterButton
                   key='maybe-later-button-dialog'
                   handleClick={handleClick}
