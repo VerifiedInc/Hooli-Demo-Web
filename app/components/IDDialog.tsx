@@ -92,29 +92,10 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   Use it to 1-click verify your identity. No more forms. No more
                   hassle <em>Welcome to a faster future.</em>
                 </FormattedTypography>,
-                <Form method='post' key='activate-button-dailog-new'>
-                  <Button
-                    name='intent'
-                    value='activate1Click'
-                    type='submit'
-                    sx={{
-                      mt: 1,
-                      width: 241.25,
-                      '&:hover': {
-                        backgroundColor: 'transparent',
-                      },
-                    }}
-                  >
-                    <img
-                      width={241.25}
-                      src='/activate_button_with_powered_by_(Hooli).png'
-                    />
-                  </Button>
-                </Form>,
                 <FormattedTypography
                   variant='caption'
                   color='neutral.main'
-                  sx={{ mt: 0, px: '1rem', fontFamily: 'Lato' }}
+                  sx={{ px: '0.8rem', fontFamily: 'Lato' }}
                   key='legal-links-dialog'
                 >
                   By clicking the button below, you agree to our{' '}
@@ -136,6 +117,25 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   </Link>
                   .
                 </FormattedTypography>,
+                <Form method='post' key='activate-button-dailog-new'>
+                  <Button
+                    name='intent'
+                    value='activate1Click'
+                    type='submit'
+                    sx={{
+                      mt: 1,
+                      width: 241.25,
+                      '&:hover': {
+                        backgroundColor: 'transparent',
+                      },
+                    }}
+                  >
+                    <img
+                      width={241.25}
+                      src='/activate_button_with_powered_by_(Hooli).png'
+                    />
+                  </Button>
+                </Form>,
                 <MaybeLaterButton
                   key='maybe-later-button-dialog'
                   handleClick={handleClick}
