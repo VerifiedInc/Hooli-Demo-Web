@@ -117,7 +117,7 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   sx={{ mt: 0, px: '1rem', fontFamily: 'Lato' }}
                   key='legal-links-dialog'
                 >
-                  By clicking this button, I agree to Unum ID's{' '}
+                  By clicking the button below, you agree to our{' '}
                   <Link href='https://unumid.co/legal' color='secondary.main'>
                     Terms of Use
                   </Link>{' '}
