@@ -118,13 +118,19 @@ export default ({ issueCredsStatus }: IDDialogProps) => {
                   key='legal-links-dialog'
                 >
                   By clicking the button below, you agree to our{' '}
-                  <Link href='https://unumid.co/legal' color='secondary.main'>
+                  <Link
+                    href='https://unumid.co/legal/terms-of-use'
+                    color='secondary.main'
+                  >
                     Terms of Use
                   </Link>{' '}
-                  and direct Hooli to share my personal information with Unum ID
-                  to provide its digital ID card services, in accordance with
+                  and direct Hooli to share your personal information with Unum
+                  ID to provide its digital ID card services, in accordance with
                   its{' '}
-                  <Link href='https://unumid.co/legal' color='secondary.main'>
+                  <Link
+                    href='https://unumid.co/legal/privacy-policy'
+                    color='secondary.main'
+                  >
                     {' '}
                     Privacy Policy
                   </Link>
