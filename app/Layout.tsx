@@ -6,11 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
   return (
     <Box>
       <TopAppBar />
-      <Box
-        sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
-      >
-        {children}
-      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>{children}</Box>
     </Box>
   );
 }
