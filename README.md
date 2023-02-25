@@ -1,10 +1,10 @@
-# README: Hooli Web Demo
+# README: Kredita Web Demo
 
 ## Overview
 
-> This project acts as a simple web application for a fictional customer, Hooli, which uses Unum ID to issue reusable [credentials](https://docs.unumid.co/terminology#credential) to its users. Additional information on how to issue credentials can be found [here](https://docs.unumid.co/api-overview#issue-credentials).
+> This project acts as a simple web application for a fictional customer, Kredita, which uses Unum ID for 1-click ID - accepting [credentials](https://docs.unumid.co/terminology#credential) issued by Hooli. Additional information on how to enable 1-click IDV can be found [here](http://localhost:3000/quick-start-guide).
 
-The Hooli Web Demo is implemented using the [Remix](https://remix.run/docs) full stack web framework. Additional information about the Unum ID demo ecosystem can be found in our [documentation](https://docs.unumid.co/hooli-demo-idv).
+The Kredita Web Demo is implemented using the [Remix](https://remix.run/docs) full stack web framework. Additional information about the Unum ID demo ecosystem can be found in our [documentation](https://docs.unumid.co/hooli-demo-idv).
 
 ## Interacting with the Demo
 
