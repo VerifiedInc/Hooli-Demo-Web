@@ -25,6 +25,8 @@ export interface HasMatchCredentialsOptions {
  * an email credential for the Hooli application user.
  * Please note: This functionality is NOT and should NOT be called in the browser due to the sensitive nature
  * of the API key (unumAPIKey).
+ *
+ * Documentation: https://docs.unumid.co/api-overview#issue-credentials
  * @param {string} email
  * @returns {Promise<'success' | 'error'>}
  */
@@ -67,6 +69,16 @@ export const issueCredentials = async (
   return 'success';
 };
 
+/**
+ * Function to make POST request to Unum ID's Core Service API /hasMatchingCredentials endpoint. The intent is to check if
+ * a user already has the necessary email credential to enable 1-click sign up.
+ * Please note: This functionality is NOT and should NOT be called in the browser due to the sensitive nature
+ * of the API key (unumAPIKey).
+ *
+ * Documentation: https://docs.unumid.co/api-overview#check-user-credentials
+ * @param email
+ * @returns
+ */
 export const hasMatchCredentials = async (
   email: string | null
 ): Promise<boolean> => {
