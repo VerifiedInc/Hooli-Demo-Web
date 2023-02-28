@@ -2,10 +2,30 @@ import { config } from '~/config';
 import { logger } from './logger.server';
 
 /**
+ * Interface to encapsulate the credential object that is sent to the Core Service API /issueCredentials endpoint.
+ */
+interface Credential {
+  type: string;
+  data: Record<string, any>;
+  expirationDate?: number; // unix timestamp, ms since epoch
+}
+
+/**
+ * Interface to encapsulate the options DTO that is sent to the Core Service API /issueCredentials endpoint.
+ */
+interface CredentialOptions {
+  email?: string;
+  phone?: string;
+  credentials: Credential[];
+}
+
+/**
  * Function to make POST request to Unum ID's Core Service API /issueCredentials endpoint. The intent is to issue
  * an email credential for the Hooli application user.
  * Please note: This functionality is NOT and should NOT be called in the browser due to the sensitive nature
  * of the API key (unumAPIKey).
+ *
+ * Documentation: https://docs.unumid.co/api-overview#issue-credentials
  * @param {string} email
  * @returns {Promise<'success' | 'error'>}
  */
@@ -17,10 +37,19 @@ export const issueCredentials = async (
     Authorization: 'Bearer ' + config.unumAPIKey,
     'Content-Type': 'application/json',
   };
-  const body = JSON.stringify({
+
+  const credential: Credential = {
+    type: 'EmailCredential',
+    data: { email },
+  };
+
+  const options: CredentialOptions = {
     email,
-    credentials: [{ type: 'EmailCredential', data: { email } }],
-  });
+    credentials: [credential],
+  };
+
+  const body = JSON.stringify(options);
+
   // For the purpose of this demo we aren't saving the user credentials; however,
   // in a production environment it's advised to save the credentials returned from the call
   let credentials;
