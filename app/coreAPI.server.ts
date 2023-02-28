@@ -24,6 +24,8 @@ interface CredentialOptions {
  * an email credential for the Hooli application user.
  * Please note: This functionality is NOT and should NOT be called in the browser due to the sensitive nature
  * of the API key (unumAPIKey).
+ *
+ * Documentation: https://docs.unumid.co/api-overview#issue-credentials
  * @param {string} email
  * @returns {Promise<'success' | 'error'>}
  */
