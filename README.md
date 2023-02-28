@@ -8,7 +8,7 @@ The Hooli Web Demo is implemented using the [Remix](https://remix.run/docs) full
 
 ### Remix
 
-While knowledge of the Remix framework is not fully required to observe and understand the simplicity of the implementation for [issuing Unum ID digital ID cards](https://www.unumid.co/issue) it is worth noting that Remix has a notion of "middleware" that serves as a lightweight backend, which takes the form an express server.
+While knowledge of the Remix framework is not fully required to observe and understand the simplicity of the implementation for [issuing Unum ID digital ID cards](https://www.unumid.co/issue) it is worth noting that Remix has a notion of "middleware" that serves as a lightweight backend, which takes the form of an express server.
 
 Because of this characteristic, even though this is a client side app, not all of the software in this repo is executed in the browser. The files with the naming convention `.server.` denote that they are executed on the express server. This is an important distinction because your Unum ID API Key used to authenticate needs to be kept secret and can only be used in a secure backend environment. **TL;DR, Please do not call the Unum ID API directly from client side code that is executed in the browser because the API key is sensitive.**
 
