@@ -1,4 +1,4 @@
-# README: Kredita Web Demo
+# Kredita Web Demo
 
 ## Overview
 
