@@ -20,7 +20,7 @@ The application's home page is a sample login page. In order to sign in, you may
 
 Once passed the login screen the user is prompted to active their Unum ID digital identity card or not. If agreed to, an EmailCredential is issued corresponding to the authenticated user. This is simply to showcase the ease of which calling [/credentials](https://docs.unumid.co/api-overview#issue-credentials) is to qualify for Unum ID's free IDV offering.
 
-The api call can be found in the [coreAPI.server.ts](/app/coreAPI.server.ts) file
+The api call can be found in the [coreAPI.server.ts](/app/coreAPI.server.ts) file.
 
 ## Development
 
