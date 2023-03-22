@@ -43,9 +43,58 @@ export const issueCredentials = async (
     data: { email },
   };
 
+  // For the purposes of the demo, these credentials are hard coded with dummy data.
+  // The intent is to highlight the variety of credential data available for issuance.
+  const dummyCredentials: Credential[] = [
+    {
+      type: 'FullNameCredential',
+      data: { fullName: 'Richard Hendricks' },
+    },
+    {
+      type: 'PhoneCredential',
+      data: { phone: '+10123456789' },
+    },
+    {
+      type: 'SexCredential',
+      data: { sex: 'male' },
+    },
+    {
+      type: 'DobCredential',
+      data: { dob: '575856000' },
+    },
+    {
+      type: 'SsnCredential',
+      data: { ssn: 111223333 },
+    },
+    {
+      type: 'NationalityCredential',
+      data: { nationality: 'United States' },
+    },
+    {
+      type: 'GovernmentIdTypeCredential',
+      data: { documentType: "Driver's License" },
+    },
+    {
+      type: 'GovernmentIdStateCredential',
+      data: { state: 'California' },
+    },
+    {
+      type: 'GovernmentIdNumberCredential',
+      data: { idNumber: 6383736743891101 },
+    },
+    {
+      type: 'GovernmentIdIssuanceDateCredential',
+      data: { issuanceDate: '21945600000' },
+    },
+    {
+      type: 'GovernmentIdExpirationDateCredential',
+      data: { expirationDate: '1883951999000' },
+    },
+  ];
+
   const options: CredentialOptions = {
     email,
-    credentials: [credential],
+    credentials: [credential, ...dummyCredentials],
   };
 
   const body = JSON.stringify(options);
