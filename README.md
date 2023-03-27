@@ -18,7 +18,7 @@ The live web app can be found [here](https://hooli-web.demo.sandbox-unumid.co).
 
 The application's home page is a sample login page. In order to sign in, you may enter any combination of email address and password. _Please note, if the email address is not valid email format, credentials will not successfully issue on subsequent screens._
 
-Once passed the login screen the user is prompted to activate their Unum ID digital identity card or not. If agreed to, an EmailCredential is issued corresponding to the authenticated user.
+Once passed the login screen the user is prompted to activate their Unum ID digital identity card or not. If agreed to, an EmailCredential is issued corresponding to the authenticated user. A number of 'dummy' credentials (e.g. FullNameCredential, SsnCredential) will also be issued for the user.
 
 The critical api call to [/credentials](https://docs.unumid.co/api-overview#issue-credentials) for issuing the credentials can be found in the [coreAPI.server.ts](/app/coreAPI.server.ts) file. By issuing credentials Hooli qualifies themselves for Unum ID's [Free IDV](https://docs.unumid.co/api-overview#free-idv-guide) offering.
 
@@ -32,6 +32,12 @@ Install necessary dependencies
 npm install
 ```
 
+Make a clone of the `.env.example` file and save as `.env` in the demo's root directory. There are a few items worth noting for setting up the `.env`.
+
+- `PORT` can be updated to whichever port you'd prefer the demo to run on locally.
+- `UNUM_API_KEY` needs to be populated with the API key you've been provided.
+- `CORE_SERVICE_URL` is defaulted to the Unum ID Core Service API in our sandbox environment.
+
 ### Running
 
 Start the Remix development asset server and the Express server by running:
@@ -40,4 +46,4 @@ Start the Remix development asset server and the Express server by running:
 npm run dev
 ```
 
-The demo will launch on port 7040.
+_Note: The demo will launch on the specified `PORT` in the `.env` file._
