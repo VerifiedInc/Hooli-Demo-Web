@@ -60,7 +60,7 @@ export const issueCredentials = async (
     },
     {
       type: 'DobCredential',
-      data: { dob: '575856000' },
+      data: { dob: '575877600000' },
     },
     {
       type: 'SsnCredential',
@@ -84,7 +84,7 @@ export const issueCredentials = async (
     },
     {
       type: 'GovernmentIdIssuanceDateCredential',
-      data: { issuanceDate: '21945600000' },
+      data: { issuanceDate: '1568332799000' },
     },
     {
       type: 'GovernmentIdExpirationDateCredential',
