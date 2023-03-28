@@ -56,7 +56,7 @@ export const issueCredentials = async (
     },
     {
       type: 'SexCredential',
-      data: { sex: 'male' },
+      data: { sex: 'Male' },
     },
     {
       type: 'DobCredential',
