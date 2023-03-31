@@ -83,7 +83,7 @@ export const requireUserEmail = async (request: Request): Promise<string> => {
 export const createUserSession = async (
   request: Request,
   email: string,
-  phone?: string,
+  phone = '',
   redirectTo = '/?prompt=true'
 ) => {
   const session = await getSession(request);
