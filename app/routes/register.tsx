@@ -26,6 +26,10 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ error: 'Email is required' }, { status: 400 });
   }
 
+  if (!phone) {
+    return json({ error: 'Phone is required' }, { status: 400 });
+  }
+
   if (!password) {
     return json({ error: 'Password is required' }, { status: 400 });
   }
@@ -33,13 +37,13 @@ export const action: ActionFunction = async ({ request }) => {
   if (
     typeof email !== 'string' ||
     typeof password !== 'string' ||
-    (phone && typeof phone !== 'string')
+    typeof phone !== 'string'
   ) {
     return json({ error: 'Invalid form data' }, { status: 400 });
   }
 
   try {
-    return createUserSession(request, email);
+    return createUserSession(request, email, phone);
   } catch (e) {
     return json({ error: getErrorMessage(e) }, { status: getErrorStatus(e) });
   }

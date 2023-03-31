@@ -21,8 +21,8 @@ export const sessionStorage = createCookieSessionStorage({
   },
 });
 
-// key for getting/setting the user email in the session
-const USER_SESSION_KEY = 'userEmail';
+// key for getting/setting the user in the session
+const USER_SESSION_KEY = 'user';
 
 /**
  * Gets the session from the request
@@ -37,13 +37,13 @@ export const getSession = async (request: Request) => {
 /**
  * Gets the user from the session
  * @param {Request} request
- * @returns {Promise<string | null>} user
+ * @returns {Promise<Record<string, string | null>>} user
  */
-export const getUserEmail = async (request: Request) => {
+export const getUser = async (request: Request) => {
   const session = await getSession(request);
-  const email = session.get(USER_SESSION_KEY);
+  const user = session.get(USER_SESSION_KEY);
 
-  return email;
+  return { ...user };
 };
 
 /**
@@ -68,9 +68,9 @@ export const logout = async (request: Request) => {
  * @returns {Promise<string>} email
  */
 export const requireUserEmail = async (request: Request): Promise<string> => {
-  const email = await getUserEmail(request);
+  const user = await getUser(request);
 
-  if (email) return email;
+  if (user?.email) return user.email;
 
   throw await logout(request);
 };
@@ -83,10 +83,15 @@ export const requireUserEmail = async (request: Request): Promise<string> => {
 export const createUserSession = async (
   request: Request,
   email: string,
+  phone = '',
   redirectTo = '/?prompt=true'
 ) => {
   const session = await getSession(request);
-  session.set(USER_SESSION_KEY, email);
+  const sessionValue = {
+    email,
+    phone,
+  };
+  session.set(USER_SESSION_KEY, sessionValue);
   return redirect(redirectTo, {
     headers: {
       'Set-Cookie': await sessionStorage.commitSession(session),

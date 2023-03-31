@@ -27,10 +27,12 @@ interface CredentialOptions {
  *
  * Documentation: https://docs.unumid.co/api-overview#issue-credentials
  * @param {string} email
+ * @param {string} phone
  * @returns {Promise<'success' | 'error'>}
  */
 export const issueCredentials = async (
-  email: string | null
+  email: string | null,
+  phone?: string | null
 ): Promise<'success' | 'error'> => {
   if (!email) return 'error'; // short circuit if no user email provided
   const headers = {
@@ -51,10 +53,6 @@ export const issueCredentials = async (
       data: { fullName: 'Richard Hendricks' },
     },
     {
-      type: 'PhoneCredential',
-      data: { phone: '+10123456789' },
-    },
-    {
       type: 'SexCredential',
       data: { sex: 'Male' },
     },
@@ -64,7 +62,7 @@ export const issueCredentials = async (
     },
     {
       type: 'SsnCredential',
-      data: { ssn: 111223333 },
+      data: { ssn: '000000000' },
     },
     {
       type: 'NationalityCredential',
@@ -92,10 +90,19 @@ export const issueCredentials = async (
     },
   ];
 
+  if (phone) {
+    dummyCredentials.push({
+      type: 'PhoneCredential',
+      data: { phone },
+    });
+  }
+
   const options: CredentialOptions = {
     email,
     credentials: [credential, ...dummyCredentials],
   };
+
+  if (phone) options.phone = phone;
 
   const body = JSON.stringify(options);
 
