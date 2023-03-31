@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import { useState } from 'react';
-import { getUserEmail, logout, requireUserEmail } from '../session.server';
+import { getUser, logout, requireUserEmail } from '../session.server';
 import { issueCredentials } from '../coreAPI.server';
 import IDModal from '../components/IDDialog';
 import { Container } from '@mui/system';
@@ -31,8 +31,8 @@ export const action: ActionFunction = async ({ request }) => {
       return await logout(request);
     }
     case 'activate1Click': {
-      const email = await getUserEmail(request);
-      return await issueCredentials(email);
+      const { email, phone } = await getUser(request);
+      return await issueCredentials(email, phone);
     }
     default: {
       return null;
