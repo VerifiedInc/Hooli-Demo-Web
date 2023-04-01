@@ -90,19 +90,21 @@ export const issueCredentials = async (
     },
   ];
 
-  if (phone) {
-    dummyCredentials.push({
-      type: 'PhoneCredential',
-      data: { phone },
-    });
-  }
-
   const options: CredentialOptions = {
     email,
     credentials: [credential, ...dummyCredentials],
   };
 
-  if (phone) options.phone = phone;
+  if (phone) {
+    // add US country code if not present
+    const phoneWithCountryCode = phone?.startsWith('+1') ? phone : '+1' + phone;
+
+    options.credentials.push({
+      type: 'PhoneCredential',
+      data: { phone: phoneWithCountryCode },
+    });
+    options.phone = phoneWithCountryCode;
+  }
 
   const body = JSON.stringify(options);
 
