@@ -14,6 +14,7 @@ interface Config {
   sessionSecret: string;
   unumAPIKey: string;
   coreServiceUrl: string;
+  partnerUuid: string;
 }
 
 export const config: Config = {
@@ -28,4 +29,5 @@ export const config: Config = {
   sessionSecret: process.env.SESSION_SECRET || '',
   unumAPIKey: process.env.UNUM_API_KEY || '',
   coreServiceUrl: process.env.CORE_SERVICE_URL || '',
+  partnerUuid: process.env.PARTNER_UUID || '',
 };

@@ -101,7 +101,10 @@ export default function HomeIndex() {
         <RecommendationsSection />
       </Container>
       {searchParams.get('prompt') === 'true' ? (
-        <IDModal issueCredsStatus={issueCredsStatus} />
+        <IDModal
+          issueCredsStatus={issueCredsStatus}
+          isPartner={Boolean(searchParams.get('partner'))}
+        />
       ) : (
         []
       )}

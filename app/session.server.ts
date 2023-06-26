@@ -92,9 +92,17 @@ export const createUserSession = async (
     phone,
   };
   session.set(USER_SESSION_KEY, sessionValue);
-  return redirect(redirectTo, {
+
+  const params = {
     headers: {
       'Set-Cookie': await sessionStorage.commitSession(session),
     },
-  });
+  };
+
+  // Append partner query parameter when is set to configuration.
+  if (config.partnerUuid) {
+    redirectTo += '&partner=true';
+  }
+
+  return redirect(redirectTo, params);
 };

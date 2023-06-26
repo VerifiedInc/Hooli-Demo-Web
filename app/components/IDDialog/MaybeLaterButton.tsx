@@ -18,6 +18,7 @@ export default ({ handleClick }: MaybeLaterButtonProps) => {
         px: 2,
         borderRadius: 1.5,
         m: '1rem',
+        mt: 0,
         '&:hover': {
           bgcolor: 'neutral.main',
         },
