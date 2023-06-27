@@ -1,5 +1,6 @@
 import { config } from '~/config';
 import { logger } from './logger.server';
+import { redirect, TypedResponse } from '@remix-run/node';
 
 /**
  * Interface to encapsulate the credential object that is sent to the Core Service API /issueCredentials endpoint.
@@ -17,6 +18,7 @@ interface CredentialOptions {
   email?: string;
   phone?: string;
   credentials: Credential[];
+  partnerUuid?: string;
 }
 
 /**
@@ -33,7 +35,7 @@ interface CredentialOptions {
 export const issueCredentials = async (
   email: string | null,
   phone?: string | null
-): Promise<'success' | 'error'> => {
+): Promise<'success' | 'error' | TypedResponse> => {
   if (!email) return 'error'; // short circuit if no user email provided
   const headers = {
     Authorization: 'Bearer ' + config.unumAPIKey,
@@ -95,6 +97,10 @@ export const issueCredentials = async (
     credentials: [credential, ...dummyCredentials],
   };
 
+  if (config.partnerUuid) {
+    options.partnerUuid = config.partnerUuid;
+  }
+
   if (phone) {
     // add US country code if not present
     const phoneWithCountryCode = phone?.startsWith('+1') ? phone : '+1' + phone;
@@ -111,6 +117,7 @@ export const issueCredentials = async (
   // For the purpose of this demo we aren't saving the user credentials; however,
   // in a production environment it's advised to save the credentials returned from the call
   let credentials;
+
   try {
     credentials = await fetch(config.coreServiceUrl + '/credentials', {
       method: 'POST',
@@ -129,6 +136,12 @@ export const issueCredentials = async (
     );
     return 'error';
   }
+
+  // We verify if the partner uuid is defined, so we use the url from the credentials with partner.
+  if (credentials?.url) {
+    return redirect(credentials.url);
+  }
+
   logger.info(
     `Credentials successfully issued for ${email}. Total credentials issued: ${credentials.length}`
   );
