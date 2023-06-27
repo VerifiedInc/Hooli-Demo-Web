@@ -156,12 +156,10 @@ export default ({ issueCredsStatus, isPartner }: IDDialogProps) => {
                   <img width={241.25} src='/Button.png' />
                 </Button>
               </Form>
-              {!isPartner && (
-                <MaybeLaterButton
-                  key='maybe-later-button-dialog'
-                  handleClick={handleClick}
-                />
-              )}
+              <MaybeLaterButton
+                key='maybe-later-button-dialog'
+                handleClick={handleClick}
+              />
             </>
           )}
           {(issueCredsStatus === 'success' || issueCredsStatus === 'new') && (
