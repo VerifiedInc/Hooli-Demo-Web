@@ -32,7 +32,7 @@ export default ({ issueCredsStatus, isPartner }: IDDialogProps) => {
     if (issueCredsStatus === 'new')
       return 'Get your Hooli digital ID card. \n Free forever.';
 
-    return 'We encountered an error while issuing your Unum ID. Please try again later';
+    return 'We encountered an error while issuing your Hooli ID Card. Please try again later';
   };
 
   const renderDescription = () => {
