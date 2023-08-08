@@ -60,35 +60,35 @@ export const issueCredentials = async (
     },
     {
       type: 'BirthDateCredential',
-      data: { birthDate: '575877600000' },
+      data: { birthDate: '587044800000' },
     },
     {
       type: 'SsnCredential',
-      data: { ssn: '000000000' },
+      data: { ssn: '111223333' },
     },
     {
       type: 'NationalityCredential',
-      data: { nationality: 'United States' },
+      data: { nationality: 'US' },
     },
     {
       type: 'GovernmentIdTypeCredential',
-      data: { documentType: "Driver's License" },
+      data: { documentType: 'Drivers License' },
     },
     {
       type: 'GovernmentIdStateCredential',
-      data: { state: 'California' },
+      data: { state: 'US-CA' },
     },
     {
       type: 'GovernmentIdNumberCredential',
-      data: { idNumber: 6383736743891101 },
+      data: { idNumber: '6383736743891101' },
     },
     {
       type: 'GovernmentIdIssuanceDateCredential',
-      data: { issuanceDate: '1568332799000' },
+      data: { issuanceDate: '1596888000000' },
     },
     {
       type: 'GovernmentIdExpirationDateCredential',
-      data: { expirationDate: '1883951999000' },
+      data: { expirationDate: '1754654400000' },
     },
   ];
 
