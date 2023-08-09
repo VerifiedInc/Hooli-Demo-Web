@@ -51,8 +51,12 @@ export const issueCredentials = async (
   // The intent is to highlight the variety of credential data available for issuance.
   const dummyCredentials: Credential[] = [
     {
-      type: 'FullNameCredential',
-      data: { fullName: 'Richard Hendricks' },
+      type: 'FirstNameCredential',
+      data: { firstName: 'Richard' },
+    },
+    {
+      type: 'LastNameCredential',
+      data: { lastName: 'Hendricks' },
     },
     {
       type: 'SexCredential',
@@ -60,7 +64,7 @@ export const issueCredentials = async (
     },
     {
       type: 'BirthDateCredential',
-      data: { birthDate: '587044800000' },
+      data: { birthDate: '603201600000' },
     },
     {
       type: 'SsnCredential',
