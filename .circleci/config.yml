@@ -37,6 +37,22 @@ workflows:
               only:
                 - main
 
+      - unumid/build-and-upload-sentry-sourcemaps:
+          requires:
+            - unumid/lint-and-test
+          context:
+            - Slack-Context
+            - Sentry-Context
+          script_name: sentry:upload_sourcemaps
+          compile_script_name: build:sourcemap
+          cache_version: v6
+          sentry_org: verified-inc
+          sentry_project: hooli-demo-web
+          filters:
+            branches:
+              only:
+                - main
+
       - unumid/deploy-image:
           name: unumid/deploy-image-dev
           requires:
@@ -100,6 +116,23 @@ workflows:
             branches:
               ignore: /.*/
 
+      - unumid/build-and-upload-sentry-sourcemaps:
+          requires:
+            - unumid/lint-and-test
+          context:
+            - Slack-Context
+            - Sentry-Context
+          script_name: sentry:upload_sourcemaps
+          compile_script_name: build:sourcemap
+          cache_version: v6
+          sentry_org: verified-inc
+          sentry_project: hooli-demo-web
+          filters:
+            tags:
+              only: /^v\d+\.\d+\.\d+/
+            branches:
+              ignore: /.*/
+
       - unumid/deploy-image:
           name: unumid/deploy-image-sandbox
           requires:
@@ -151,6 +184,22 @@ workflows:
           repo: hooli-demo-web # update with actual repo name
           image_tag_1: '${CIRCLE_BRANCH}-${CIRCLE_BUILD_NUM}'
           image_tag_2: test-latest
+          filters:
+            branches:
+              only:
+                - test-circleci
+
+      - unumid/build-and-upload-sentry-sourcemaps:
+          requires:
+            - unumid/lint-and-test
+          context:
+            - Slack-Context
+            - Sentry-Context
+          script_name: sentry:upload_sourcemaps
+          compile_script_name: build:sourcemap
+          cache_version: v6
+          sentry_org: verified-inc
+          sentry_project: hooli-demo-web
           filters:
             branches:
               only:
