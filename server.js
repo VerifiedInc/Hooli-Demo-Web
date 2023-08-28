@@ -53,6 +53,7 @@ app.use(
           process.env.NODE_ENV === 'development' ? 'ws://localhost:8002' : '',
           // LogRocket
           'https://*.lr-in-prod.com',
+          'https://*.ingest.sentry.io',
         ],
       },
     },
