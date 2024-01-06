@@ -51,12 +51,17 @@ export const issueCredentials = async (
   // The intent is to highlight the variety of credential data available for issuance.
   const dummyCredentials: Credential[] = [
     {
-      type: 'FirstNameCredential',
-      data: { firstName: 'Richard' },
-    },
-    {
-      type: 'LastNameCredential',
-      data: { lastName: 'Hendricks' },
+      type: 'FullNameCredential',
+      data: [
+        {
+          type: 'FirstNameCredential',
+          data: 'Richard',
+        },
+        {
+          type: 'LastNameCredential',
+          data: 'Hen',
+        },
+      ],
     },
     {
       type: 'SexCredential',
