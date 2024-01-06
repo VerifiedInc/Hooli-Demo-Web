@@ -55,11 +55,11 @@ export const issueCredentials = async (
       data: [
         {
           type: 'FirstNameCredential',
-          data: 'Richard',
+          data: { firstName: 'Richard' },
         },
         {
           type: 'LastNameCredential',
-          data: 'Hen',
+          data: { lastName: 'Hendricks' },
         },
       ],
     },
