@@ -95,7 +95,10 @@ export const createUserSession = async (
 
   const params = {
     headers: {
-      'Set-Cookie': await sessionStorage.commitSession(session),
+      'Set-Cookie': await sessionStorage.commitSession(session, {
+        secure: true,
+        sameSite: 'none',
+      }),
     },
   };
 
