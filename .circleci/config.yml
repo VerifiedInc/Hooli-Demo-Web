@@ -108,6 +108,7 @@ workflows:
             - AWS-Root-Account
             - Slack-Context
           account_id_1: 058264190665
+          account_id_3: 032538391126 # purposely using the sandbox account for 3, because the ecr repo does not exist in
           publish_image_tag_1: true
           repo: hooli-demo-web # update with actual repo name
           image_tag_1: '${CIRCLE_TAG}'
