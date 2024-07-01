@@ -47,7 +47,7 @@ workflows:
           script_name: sentry:upload_sourcemaps
           compile_script_name: build:sourcemap
           cache_version: v6
-          sentry_org: verified-inc
+          sentry_org: verified-network
           sentry_project: hooli-demo-web
           filters:
             branches:
@@ -72,23 +72,23 @@ workflows:
               only:
                 - main
 
-      - unumid/deploy-image:
-          name: unumid/deploy-image-dev-partner
-          requires:
-            - unumid/build-and-push-image
-          context:
-            - AWS-Root-Account
-            - Slack-Context
-          account_id: '408067220840'
-          repo: hooli-demo-web # update with actual repo name
-          deployment: hooli-partner-demo-web # update with actual deployment name
-          cluster_name: dev-account-saas-cluster
-          namespace: demos
-          image_tag: dev-latest
-          filters:
-            branches:
-              only:
-                - main
+      # - unumid/deploy-image:
+      #     name: unumid/deploy-image-dev-partner
+      #     requires:
+      #       - unumid/build-and-push-image
+      #     context:
+      #       - AWS-Root-Account
+      #       - Slack-Context
+      #     account_id: '408067220840'
+      #     repo: hooli-demo-web # update with actual repo name
+      #     deployment: hooli-partner-demo-web # update with actual deployment name
+      #     cluster_name: dev-account-saas-cluster
+      #     namespace: demos
+      #     image_tag: dev-latest
+      #     filters:
+      #       branches:
+      #         only:
+      #           - main
 
   build-and-deploy-staging:
     jobs:
@@ -128,7 +128,7 @@ workflows:
           script_name: sentry:upload_sourcemaps
           compile_script_name: build:sourcemap
           cache_version: v6
-          sentry_org: verified-inc
+          sentry_org: verified-network
           sentry_project: hooli-demo-web
           filters:
             tags:
@@ -156,25 +156,25 @@ workflows:
             branches:
               ignore: /.*/
 
-      - unumid/deploy-image:
-          name: unumid/deploy-image-staging-partner
-          requires:
-            - unumid/build-and-push-image-staging
-          context:
-            - AWS-Root-Account
-            - Slack-Context
-          account_id: 058264190665
-          repo: hooli-demo-web # update with actual repo name
-          deployment: hooli-partner-demo-web # update with actual deployment name
-          cluster_name: staging-account-core-cluster
-          namespace: demos
-          image_tag: '${CIRCLE_TAG}'
-          slack_pass_notify_template: success_tagged_deploy_1
-          filters:
-            tags:
-              only: /^v\d+\.\d+\.\d+/
-            branches:
-              ignore: /.*/
+      # - unumid/deploy-image:
+      #     name: unumid/deploy-image-staging-partner
+      #     requires:
+      #       - unumid/build-and-push-image-staging
+      #     context:
+      #       - AWS-Root-Account
+      #       - Slack-Context
+      #     account_id: 058264190665
+      #     repo: hooli-demo-web # update with actual repo name
+      #     deployment: hooli-partner-demo-web # update with actual deployment name
+      #     cluster_name: staging-account-core-cluster
+      #     namespace: demos
+      #     image_tag: '${CIRCLE_TAG}'
+      #     slack_pass_notify_template: success_tagged_deploy_1
+      #     filters:
+      #       tags:
+      #         only: /^v\d+\.\d+\.\d+/
+      #       branches:
+      #         ignore: /.*/
 
   build-and-deploy-test:
     jobs:
@@ -199,7 +199,7 @@ workflows:
           script_name: sentry:upload_sourcemaps
           compile_script_name: build:sourcemap
           cache_version: v6
-          sentry_org: verified-inc
+          sentry_org: verified-network
           sentry_project: hooli-demo-web
           filters:
             branches:
@@ -223,20 +223,20 @@ workflows:
             branches:
               only:
                 - test-circleci
-      - unumid/deploy-image:
-          name: unumid/deploy-image-test-partner
-          requires:
-            - unumid/build-and-push-image-test
-          context:
-            - AWS-Root-Account
-            - Slack-Context
-          account_id: '408067220840'
-          repo: hooli-demo-web # update with actual repo name
-          deployment: hooli-partner-demo-web # update with actual deployment name
-          cluster_name: dev-account-saas-cluster
-          namespace: demos
-          image_tag: test-latest
-          filters:
-            branches:
-              only:
-                - test-circleci
+      # - unumid/deploy-image:
+      #     name: unumid/deploy-image-test-partner
+      #     requires:
+      #       - unumid/build-and-push-image-test
+      #     context:
+      #       - AWS-Root-Account
+      #       - Slack-Context
+      #     account_id: '408067220840'
+      #     repo: hooli-demo-web # update with actual repo name
+      #     deployment: hooli-partner-demo-web # update with actual deployment name
+      #     cluster_name: dev-account-saas-cluster
+      #     namespace: demos
+      #     image_tag: test-latest
+      #     filters:
+      #       branches:
+      #         only:
+      #           - test-circleci
